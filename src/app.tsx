@@ -1,23 +1,15 @@
 import React from 'react';
 
-interface AppProps {
-}
+interface AppProps {}
 
-interface AppState {
-}
+interface AppState {}
 
 export default class App extends React.Component<AppProps, AppState> {
     constructor(props: AppProps) {
         super(props);
-
     }
 
-
     render() {
-        return (
-            <div>
-                Hello world!
-            </div>
-        );
+        return <div>Hello world!</div>;
     }
 }
