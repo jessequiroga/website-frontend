@@ -4,7 +4,7 @@ import './landing-page.css';
 // Material components
 import Button from '@material-ui/core/Button';
 
-export default class LandingPage extends React.Component<any, any> {
+export class LandingPage extends React.Component<any, any> {
     render() {
         return (
             <div className="landing-page-container">

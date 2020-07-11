@@ -1,5 +1,5 @@
 import React from 'react';
-import LandingPage from './pages/landing-page';
+import { LandingPage } from './pages';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
 
 interface AppProps {}
