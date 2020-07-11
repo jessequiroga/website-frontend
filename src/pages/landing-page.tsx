@@ -1,6 +1,8 @@
 import React from 'react';
-
 import './landing-page.css';
+
+import Button from '@material-ui/core/Button';
+
 export default class LandingPage extends React.Component<any, any> {
     render() {
         return (
@@ -14,6 +16,11 @@ export default class LandingPage extends React.Component<any, any> {
                     mešali slike, črke, animacije, video ter programsko kodo in čipe v nove uporabne mešanice.
                     <br />
                     <span className="landing-page-contents-accent">Kdo ve, kaj nastane?</span>
+                    <div className="landing-page-button">
+                        <Button variant="contained" color="primary">
+                            KONTAKT
+                        </Button>
+                    </div>
                 </div>
             </div>
         );

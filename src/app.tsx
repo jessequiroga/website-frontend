@@ -1,5 +1,6 @@
 import React from 'react';
 import LandingPage from './pages/landing-page';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
 
 interface AppProps {}
 
@@ -12,9 +13,23 @@ export default class App extends React.Component<AppProps, AppState> {
 
     render() {
         return (
-            <div>
-                <LandingPage />
-            </div>
+            <MuiThemeProvider theme={this.generateTheme()}>
+                <div>
+                    <LandingPage />
+                </div>
+            </MuiThemeProvider>
         );
     }
+
+    private generateTheme = () =>
+        createMuiTheme({
+            palette: {
+                primary: {
+                    main: '#ffffff'
+                },
+                secondary: {
+                    main: '#00a6fb'
+                }
+            }
+        });
 }

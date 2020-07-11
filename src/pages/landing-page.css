@@ -30,3 +30,7 @@
     font-size: 26px;
     color: var(--font-white);
 }
+
+.landing-page-button {
+    align-self: flex-end;
+}
