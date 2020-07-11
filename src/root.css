@@ -3,6 +3,10 @@
     /* Theme colors */
     --primary-color: white;
     --accent-color: #00a6fb;
+
+    /* Font colors */
+    --font-white: white;
+    --font-black: black;
 }
 
 /* @font-face declarations */

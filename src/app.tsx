@@ -1,4 +1,5 @@
 import React from 'react';
+import LandingPage from './pages/landing-page';
 
 interface AppProps {}
 
@@ -10,6 +11,10 @@ export default class App extends React.Component<AppProps, AppState> {
     }
 
     render() {
-        return <div>Hello world!</div>;
+        return (
+            <div>
+                <LandingPage />
+            </div>
+        );
     }
 }
