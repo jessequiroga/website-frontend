@@ -1,0 +1,36 @@
+@import '../root.css';
+
+.landing-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    text-align: left;
+    min-height: 100vh;
+    background-color: var(--accent-color);
+}
+
+.landing-page-title {
+    font-weight: bold;
+    font-size: 60px;
+    color: var(--font-white);
+    margin: 50px 0 20px 50px;
+}
+
+.landing-page-contents {
+    font-weight: normal;
+    font-size: 26px;
+    width: 687px;
+    color: var(--font-white);
+    margin: 50px 0 0 50px;
+}
+
+.landing-page-contents-accent {
+    font-weight: bold;
+    font-size: 26px;
+    color: var(--font-white);
+}
+
+.landing-page-button {
+    align-self: flex-end;
+}
