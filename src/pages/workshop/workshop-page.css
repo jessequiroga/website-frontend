@@ -1,0 +1,22 @@
+@import '../../root.css';
+
+.workshop-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--primary-color);
+}
+
+.workshop-page-title {
+    color: var(--font-black);
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.workshop-page-cards-container {
+    margin-top: 80px;
+}
