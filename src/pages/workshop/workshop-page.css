@@ -1,0 +1,18 @@
+@import '../../root.css';
+
+.workshop-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    background-color: var(--primary-color);
+}
+
+.workshop-page-title {
+    color: var(--font-black);
+    font-weight: bold;
+    font-size: 40px;
+    margin-top: 120px;
+}
