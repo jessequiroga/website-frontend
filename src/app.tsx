@@ -7,10 +7,6 @@ interface AppProps {}
 interface AppState {}
 
 export default class App extends React.Component<AppProps, AppState> {
-    constructor(props: AppProps) {
-        super(props);
-    }
-
     render() {
         return (
             <MuiThemeProvider theme={this.generateTheme()}>
