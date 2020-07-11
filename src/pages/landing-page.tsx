@@ -1,6 +1,7 @@
 import React from 'react';
 import './landing-page.css';
 
+// Material components
 import Button from '@material-ui/core/Button';
 
 export default class LandingPage extends React.Component<any, any> {
@@ -17,8 +18,8 @@ export default class LandingPage extends React.Component<any, any> {
                     <br />
                     <span className="landing-page-contents-accent">Kdo ve, kaj nastane?</span>
                     <div className="landing-page-button">
-                        <Button variant="contained" color="primary">
-                            KONTAKT
+                        <Button variant="contained" color="primary" disableElevation style={{ width: '120px' }}>
+                            <span className="landing-page-button-text">KONTAKT</span>
                         </Button>
                     </div>
                 </div>
