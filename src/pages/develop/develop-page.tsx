@@ -2,8 +2,6 @@ import React from 'react';
 import './develop-page.css';
 
 import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
 import ListItem from '@material-ui/core/ListItem';
 import List from '@material-ui/core/List';
 import Box from '@material-ui/core/Box';
@@ -43,36 +41,32 @@ export default class DevelopPage extends React.Component<DevelopPageProps, Devel
                     </Grid>
                     <Grid item xs={9}>
                         <div>
-                            <Card className="develop-page-card-container">
-                                <CardContent style={{ overflow: 'auto' }}>
-                                    <List>
-                                        {this.state.repositories.map((repo) => {
-                                            return (
-                                                <ListItem
-                                                    key={repo.name}
-                                                    onClick={() => {
-                                                        console.log(`Should lead to ${repo.url}`);
-                                                    }}
-                                                >
-                                                    <Box flexDirection="column">
-                                                        <div className="develop-page-repository-title">{repo.name}</div>
-                                                        <div className="develop-page-repository-description">
-                                                            {repo.description}
-                                                        </div>
-                                                        <div>
-                                                            <span
-                                                                className="develop-page-language-color"
-                                                                style={{ backgroundColor: repo.languageColor }}
-                                                            />
-                                                            <span>{repo.language}</span>
-                                                        </div>
-                                                    </Box>
-                                                </ListItem>
-                                            );
-                                        })}
-                                    </List>
-                                </CardContent>
-                            </Card>
+                            <List>
+                                {this.state.repositories.map((repo) => {
+                                    return (
+                                        <ListItem
+                                            key={repo.name}
+                                            onClick={() => {
+                                                console.log(`Should lead to ${repo.url}`);
+                                            }}
+                                        >
+                                            <Box flexDirection="column">
+                                                <div className="develop-page-repository-title">{repo.name}</div>
+                                                <div className="develop-page-repository-description">
+                                                    {repo.description}
+                                                </div>
+                                                <div>
+                                                    <span
+                                                        className="develop-page-language-color"
+                                                        style={{ backgroundColor: repo.languageColor }}
+                                                    />
+                                                    <span>{repo.language}</span>
+                                                </div>
+                                            </Box>
+                                        </ListItem>
+                                    );
+                                })}
+                            </List>
                         </div>
                     </Grid>
                 </Grid>

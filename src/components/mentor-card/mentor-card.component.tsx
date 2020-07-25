@@ -24,6 +24,7 @@ export default class MentorCardComponent extends React.Component<MentorCardCompo
                             <img
                                 src={require(`../../assets/${this.props.profilePic}`)}
                                 className="mentor-card-component-image"
+                                alt="Mentor icon"
                             />
                         </Box>
                         <Box m="auto">
