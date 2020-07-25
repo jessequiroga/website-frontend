@@ -9,13 +9,7 @@ interface AppProps {}
 interface AppState {}
 
 export default class App extends React.Component<AppProps, AppState> {
-    constructor(props: AppProps) {
-        super(props);
-        const firebaseProvider = FirebaseProvider.instance();
-        if (firebaseProvider !== undefined) {
-            firebaseProvider.fetchAndActivateRemoteConfig();
-        }
-    }
+    private readonly firebaseProvider = FirebaseProvider.getInstance();
 
     render() {
         return (
@@ -24,7 +18,7 @@ export default class App extends React.Component<AppProps, AppState> {
                     <LandingPage />
                     <WorkshopPage />
                     <MentorsPage />
-                    <DevelopPage />
+                    <DevelopPage firebaseProvider={this.firebaseProvider} />
                 </div>
             </MuiThemeProvider>
         );

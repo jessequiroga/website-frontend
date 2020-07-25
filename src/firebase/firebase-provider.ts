@@ -1,14 +1,15 @@
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
+import 'firebase/remote-config';
 import { firebaseConfig } from '../utils';
 
 export class FirebaseProvider {
-    private static _instance: FirebaseProvider;
+    private static instance: FirebaseProvider;
 
-    static instance(): FirebaseProvider {
+    static getInstance(): FirebaseProvider {
         if (!FirebaseProvider.instance) {
-            FirebaseProvider._instance = new FirebaseProvider();
+            FirebaseProvider.instance = new FirebaseProvider();
         }
-        return FirebaseProvider._instance;
+        return FirebaseProvider.instance;
     }
 
     private readonly app: firebase.app.App;
@@ -16,6 +17,7 @@ export class FirebaseProvider {
     private readonly fetchTimeout: number = 3600000;
 
     private constructor() {
+        console.log('Initializing Firebase app...');
         this.app = firebase.initializeApp(firebaseConfig);
         this.remoteConfig = this.app.remoteConfig();
         this.remoteConfig.settings = {
@@ -24,11 +26,13 @@ export class FirebaseProvider {
         };
     }
 
-    async fetchAndActivateRemoteConfig() {
-        await this.remoteConfig.fetchAndActivate();
+    async fetchGitHubToken(user: string): Promise<string> {
+        await this.fetchAndActivateRemoteConfig();
+        return this.remoteConfig.getString(`github_token_${user}`);
     }
 
-    fetchGitHubToken(user: string): string {
-        return this.remoteConfig.getString(`github_token_${user}`);
+    private async fetchAndActivateRemoteConfig() {
+        console.log('Fetching and activating Firebase Remote Config...');
+        await this.remoteConfig.fetchAndActivate();
     }
 }

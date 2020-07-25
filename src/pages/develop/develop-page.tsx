@@ -10,15 +10,15 @@ import Box from '@material-ui/core/Box';
 import { FirebaseProvider } from '../../firebase';
 import { githubGraphQLClient, RepositoryModel } from '../../github';
 
-interface DevelopPageProps {}
+interface DevelopPageProps {
+    firebaseProvider: FirebaseProvider;
+}
 
 interface DevelopPageState {
     repositories: Array<RepositoryModel>;
 }
 
 export default class DevelopPage extends React.Component<DevelopPageProps, DevelopPageState> {
-    private readonly firebaseProvider = FirebaseProvider.instance();
-
     constructor(props: DevelopPageProps) {
         super(props);
         this.state = {
@@ -78,10 +78,12 @@ export default class DevelopPage extends React.Component<DevelopPageProps, Devel
     }
 
     private async fetchGitHubRepos(user: string) {
-        const token = this.firebaseProvider.fetchGitHubToken(user);
-        const userRepos = await githubGraphQLClient(token);
-        this.setState({
-            repositories: userRepos
-        });
+        if (this.props.firebaseProvider !== undefined) {
+            const token = await this.props.firebaseProvider.fetchGitHubToken(user);
+            const userRepos = await githubGraphQLClient(token);
+            this.setState({
+                repositories: userRepos
+            });
+        }
     }
 }

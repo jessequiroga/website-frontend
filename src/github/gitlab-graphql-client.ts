@@ -17,7 +17,8 @@ export async function githubGraphQLClient(token: string): Promise<Array<Reposito
             }
         }
     );
-    return query['data']['viewer']['repositories']['nodes'].map((repo: any) => ({
+    console.log(query);
+    return query['viewer']['repositories']['nodes'].map((repo: any) => ({
         name: repo['nameWithOwner'],
         description: repo['description'],
         url: repo['url'],
