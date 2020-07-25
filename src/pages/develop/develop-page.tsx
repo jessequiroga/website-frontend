@@ -36,8 +36,26 @@ export default class DevelopPage extends React.Component<DevelopPageProps, Devel
                 <div className="develop-page-title">RAZVIJAJ Z NAMI!</div>
                 <Grid container style={{ padding: '24px' }}>
                     <Grid item xs={3}>
-                        <div className="develop-page-mentor-name">Peter Aleksander Bizjak</div>
-                        <div className="develop-page-mentor-name">Tian Jagodic</div>
+                        <div
+                            className="develop-page-mentor-name"
+                            style={{ fontWeight: this.state.repositoriesFor === 0 ? 'bold' : 'normal' }}
+                            onClick={async () => {
+                                this.setState({ repositoriesFor: 0 });
+                                await this.fetchGitHubRepos('peter');
+                            }}
+                        >
+                            Peter Aleksander Bizjak
+                        </div>
+                        <div
+                            className="develop-page-mentor-name"
+                            style={{ fontWeight: this.state.repositoriesFor === 1 ? 'bold' : 'normal' }}
+                            onClick={async () => {
+                                this.setState({ repositoriesFor: 1 });
+                                await this.fetchGitHubRepos('tian');
+                            }}
+                        >
+                            Tian Jagodic
+                        </div>
                     </Grid>
                     <Grid item xs={9}>
                         <div>
