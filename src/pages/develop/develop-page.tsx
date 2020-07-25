@@ -7,8 +7,31 @@ import CardContent from '@material-ui/core/CardContent';
 import ListItem from '@material-ui/core/ListItem';
 import List from '@material-ui/core/List';
 import Box from '@material-ui/core/Box';
+import { FirebaseProvider } from '../../firebase';
+import { githubGraphQLClient, RepositoryModel } from '../../github';
 
-export default class DevelopPage extends React.Component<any, any> {
+interface DevelopPageProps {
+    firebaseProvider: FirebaseProvider;
+}
+
+interface DevelopPageState {
+    repositoriesFor: number;
+    repositories: Array<RepositoryModel>;
+}
+
+export default class DevelopPage extends React.Component<DevelopPageProps, DevelopPageState> {
+    constructor(props: DevelopPageProps) {
+        super(props);
+        this.state = {
+            repositoriesFor: 0,
+            repositories: []
+        };
+    }
+
+    componentDidMount() {
+        this.fetchGitHubRepos('peter');
+    }
+
     render() {
         return (
             <div className="develop-page-container">
@@ -23,20 +46,30 @@ export default class DevelopPage extends React.Component<any, any> {
                             <Card className="develop-page-card-container">
                                 <CardContent style={{ overflow: 'auto' }}>
                                     <List>
-                                        <ListItem>
-                                            <Box flexDirection="column">
-                                                <div className="develop-page-repository-title">
-                                                    username/Repository-Title
-                                                </div>
-                                                <div className="develop-page-repository-description">
-                                                    Short repository description, containing stuff, I guess...
-                                                </div>
-                                                <div>
-                                                    <span className="develop-page-language-color" />
-                                                    <span>TypeScript</span>
-                                                </div>
-                                            </Box>
-                                        </ListItem>
+                                        {this.state.repositories.map((repo) => {
+                                            return (
+                                                <ListItem
+                                                    key={repo.name}
+                                                    onClick={() => {
+                                                        console.log(`Should lead to ${repo.url}`);
+                                                    }}
+                                                >
+                                                    <Box flexDirection="column">
+                                                        <div className="develop-page-repository-title">{repo.name}</div>
+                                                        <div className="develop-page-repository-description">
+                                                            {repo.description}
+                                                        </div>
+                                                        <div>
+                                                            <span
+                                                                className="develop-page-language-color"
+                                                                style={{ backgroundColor: repo.languageColor }}
+                                                            />
+                                                            <span>{repo.language}</span>
+                                                        </div>
+                                                    </Box>
+                                                </ListItem>
+                                            );
+                                        })}
                                     </List>
                                 </CardContent>
                             </Card>
@@ -45,5 +78,15 @@ export default class DevelopPage extends React.Component<any, any> {
                 </Grid>
             </div>
         );
+    }
+
+    private async fetchGitHubRepos(user: string) {
+        if (this.props.firebaseProvider !== undefined) {
+            const token = await this.props.firebaseProvider.fetchGitHubToken(user);
+            const userRepos = await githubGraphQLClient(token);
+            this.setState({
+                repositories: userRepos
+            });
+        }
     }
 }

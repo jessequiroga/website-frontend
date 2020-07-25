@@ -28,7 +28,7 @@
 }
 
 .develop-page-card-container {
-    height: 77vh;
+    height: 64vh;
 }
 
 .develop-page-repository-title {
@@ -51,5 +51,4 @@
     height: 12px;
     margin-right: 8px;
     border-radius: 50%;
-    background-color: #2b7489;
 }
