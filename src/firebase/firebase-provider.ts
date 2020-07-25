@@ -3,12 +3,13 @@ import { firebaseConfig } from '../utils';
 
 export class FirebaseProvider {
     private static _instance: FirebaseProvider;
-    static instance = (): FirebaseProvider => {
+
+    static instance(): FirebaseProvider {
         if (!FirebaseProvider.instance) {
             FirebaseProvider._instance = new FirebaseProvider();
         }
         return FirebaseProvider._instance;
-    };
+    }
 
     private readonly app: firebase.app.App;
     private readonly remoteConfig: firebase.remoteConfig.RemoteConfig;
