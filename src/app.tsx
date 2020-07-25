@@ -1,6 +1,7 @@
 import React from 'react';
 import { LandingPage, MentorsPage, WorkshopPage } from './pages';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
+import DevelopPage from './pages/develop/develop-page';
 
 interface AppProps {}
 
@@ -14,6 +15,7 @@ export default class App extends React.Component<AppProps, AppState> {
                     <LandingPage />
                     <WorkshopPage />
                     <MentorsPage />
+                    <DevelopPage />
                 </div>
             </MuiThemeProvider>
         );
