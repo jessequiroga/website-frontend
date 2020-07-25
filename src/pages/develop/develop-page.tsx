@@ -65,7 +65,8 @@ export default class DevelopPage extends React.Component<DevelopPageProps, Devel
                                         <ListItem
                                             key={repo.name}
                                             onClick={() => {
-                                                console.log(`Should lead to ${repo.url}`);
+                                                window.open(repo.url);
+                                                window.focus();
                                             }}
                                         >
                                             <Box flexDirection="column">
