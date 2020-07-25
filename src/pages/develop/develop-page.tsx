@@ -15,6 +15,7 @@ interface DevelopPageProps {
 }
 
 interface DevelopPageState {
+    repositoriesFor: number;
     repositories: Array<RepositoryModel>;
 }
 
@@ -22,6 +23,7 @@ export default class DevelopPage extends React.Component<DevelopPageProps, Devel
     constructor(props: DevelopPageProps) {
         super(props);
         this.state = {
+            repositoriesFor: 0,
             repositories: []
         };
     }
@@ -47,6 +49,7 @@ export default class DevelopPage extends React.Component<DevelopPageProps, Devel
                                         {this.state.repositories.map((repo) => {
                                             return (
                                                 <ListItem
+                                                    key={repo.name}
                                                     onClick={() => {
                                                         console.log(`Should lead to ${repo.url}`);
                                                     }}
