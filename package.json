@@ -5,7 +5,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "format": "prettier --write \"src/**\" --config .prettierrc",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\" --config .prettierrc",
     "start": "react-scripts start",
     "build": "react-scripts build"
   },
