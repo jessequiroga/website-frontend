@@ -1,10 +1,11 @@
 import React from 'react';
 import './develop.page.css';
 
-import { Box, Grid, List, ListItem } from '@material-ui/core';
+import { Grid, List } from '@material-ui/core';
 
 import { FirebaseProvider } from '../../firebase';
 import { githubGraphQLClient, RepositoryModel } from '../../github';
+import { RepositoryComponent } from '../../components';
 
 interface DevelopPageProps {
     firebaseProvider: FirebaseProvider;
@@ -30,12 +31,12 @@ export class DevelopPage extends React.Component<DevelopPageProps, DevelopPageSt
 
     render() {
         return (
-            <div className="develop-page-container">
+            <div className="page-container">
                 <div className="develop-page-title">RAZVIJAJ Z NAMI!</div>
                 <Grid container style={{ padding: '24px' }}>
                     <Grid item xs={3}>
                         <div
-                            className="develop-page-mentor-name"
+                            className="mentor-name"
                             style={{ fontWeight: this.state.repositoriesFor === 0 ? 'bold' : 'normal' }}
                             onClick={async () => {
                                 this.setState({ repositoriesFor: 0 });
@@ -45,7 +46,7 @@ export class DevelopPage extends React.Component<DevelopPageProps, DevelopPageSt
                             Peter Aleksander Bizjak
                         </div>
                         <div
-                            className="develop-page-mentor-name"
+                            className="mentor-name"
                             style={{ fontWeight: this.state.repositoriesFor === 1 ? 'bold' : 'normal' }}
                             onClick={async () => {
                                 this.setState({ repositoriesFor: 1 });
@@ -58,31 +59,15 @@ export class DevelopPage extends React.Component<DevelopPageProps, DevelopPageSt
                     <Grid item xs={9}>
                         <div>
                             <List>
-                                {this.state.repositories.map((repo) => {
-                                    return (
-                                        <ListItem
-                                            key={repo.name}
-                                            onClick={() => {
-                                                window.open(repo.url);
-                                                window.focus();
-                                            }}
-                                        >
-                                            <Box flexDirection="column">
-                                                <div className="develop-page-repository-title">{repo.name}</div>
-                                                <div className="develop-page-repository-description">
-                                                    {repo.description}
-                                                </div>
-                                                <div>
-                                                    <span
-                                                        className="develop-page-language-color"
-                                                        style={{ backgroundColor: repo.languageColor }}
-                                                    />
-                                                    <span>{repo.language}</span>
-                                                </div>
-                                            </Box>
-                                        </ListItem>
-                                    );
-                                })}
+                                {this.state.repositories.map((repo) => (
+                                    <RepositoryComponent
+                                        repositoryName={repo.name}
+                                        description={repo.description}
+                                        fullUrl={repo.url}
+                                        primaryLanguageName={repo.language}
+                                        primaryLanguageColor={repo.languageColor}
+                                    />
+                                ))}
                             </List>
                         </div>
                     </Grid>
@@ -92,12 +77,10 @@ export class DevelopPage extends React.Component<DevelopPageProps, DevelopPageSt
     }
 
     private async fetchGitHubRepos(user: string) {
-        if (this.props.firebaseProvider !== undefined) {
-            const token = await this.props.firebaseProvider.fetchGitHubToken(user);
-            const userRepos = await githubGraphQLClient(token);
-            this.setState({
-                repositories: userRepos
-            });
-        }
+        const token = await this.props.firebaseProvider.fetchGitHubToken(user);
+        const userRepos = await githubGraphQLClient(token);
+        this.setState({
+            repositories: userRepos
+        });
     }
 }

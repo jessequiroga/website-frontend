@@ -1,1 +1,14 @@
 @import '../../index.css';
+
+.mentor-name {
+    font-size: 26px;
+    color: var(--font-black);
+    margin-bottom: 16px;
+}
+
+.develop-page-title {
+    color: var(--font-black);
+    font-weight: bold;
+    font-size: 40px;
+    margin: 24px 0 56px 24px;
+}

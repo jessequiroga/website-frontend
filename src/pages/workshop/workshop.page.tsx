@@ -9,8 +9,8 @@ import { returnListOfWorkshops } from '../../utils';
 export class WorkshopPage extends React.Component<any, any> {
     render() {
         return (
-            <div className="workshop-page-container">
-                <div className="workshop-page-cards-container">
+            <div className="page-container">
+                <div className="card-container">
                     <Grid
                         container
                         direction="column"
@@ -20,7 +20,7 @@ export class WorkshopPage extends React.Component<any, any> {
                     >
                         <Grid item>
                             <Grid container>
-                                <div className="workshop-page-title">DELAVNICE</div>
+                                <div className="page-title">DELAVNICE</div>
                             </Grid>
                         </Grid>
                         <Grid item>

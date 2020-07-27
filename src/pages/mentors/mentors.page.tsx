@@ -9,8 +9,8 @@ import { returnListOfMentors } from '../../utils';
 export class MentorsPage extends React.Component<any, any> {
     render() {
         return (
-            <div className="mentors-page-container">
-                <div className="mentors-page-cards-container">
+            <div className="page-container">
+                <div className="card-container">
                     <Grid
                         container
                         direction="column"
@@ -20,7 +20,7 @@ export class MentorsPage extends React.Component<any, any> {
                     >
                         <Grid item>
                             <Grid container>
-                                <div className="mentors-page-title">MENTORJI</div>
+                                <div className="page-title">MENTORJI</div>
                             </Grid>
                         </Grid>
                         <Grid item>

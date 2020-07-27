@@ -19,7 +19,7 @@ export class MentorComponent extends React.Component<MentorCardComponentProps, a
                         <Box m="auto">
                             <img
                                 src={require(`../../assets/${this.props.profilePic}`)}
-                                className="mentor-card-component-image"
+                                className="card-component-image"
                                 alt="Mentor icon"
                             />
                         </Box>
@@ -29,16 +29,12 @@ export class MentorComponent extends React.Component<MentorCardComponentProps, a
                             </Typography>
                         </Box>
                         <Box m="auto">
-                            <Typography variant="subtitle1" className="mentor-card-item">
-                                {this.props.instagram}
+                            <Typography variant="subtitle1">
+                                <span style={{ fontWeight: 'normal' }}>{this.props.instagram}</span>
                             </Typography>
                         </Box>
-                        <Typography
-                            variant="body2"
-                            style={{ width: '350px', marginTop: '16px' }}
-                            className="mentor-card-item"
-                        >
-                            {this.props.bio}
+                        <Typography variant="body2" style={{ width: '350px', marginTop: '16px' }}>
+                            <span style={{ fontWeight: 'normal' }}>{this.props.bio}</span>
                         </Typography>
                     </Box>
                 </CardContent>
