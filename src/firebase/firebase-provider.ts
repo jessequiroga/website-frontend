@@ -17,7 +17,6 @@ export class FirebaseProvider {
     private readonly fetchTimeout: number = 3600000;
 
     private constructor() {
-        console.log('Initializing Firebase app...');
         this.app = firebase.initializeApp(firebaseConfig);
         this.remoteConfig = this.app.remoteConfig();
         this.remoteConfig.settings = {
@@ -31,8 +30,7 @@ export class FirebaseProvider {
         return this.remoteConfig.getString(`github_token_${user}`);
     }
 
-    private async fetchAndActivateRemoteConfig() {
-        console.log('Fetching and activating Firebase Remote Config...');
-        await this.remoteConfig.fetchAndActivate();
+    private async fetchAndActivateRemoteConfig(): Promise<boolean> {
+        return await this.remoteConfig.fetchAndActivate();
     }
 }

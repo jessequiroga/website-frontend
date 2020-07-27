@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app';
 
-// Styles
 import './index.css';
 
 ReactDOM.render(
