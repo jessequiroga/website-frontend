@@ -3,8 +3,8 @@ import './workshop-page.css';
 
 // Material components
 import Grid from '@material-ui/core/Grid';
-import WorkshopCardComponent from '../../components/workshop-card/workshop-card.component';
 
+import WorkshopCardComponent from '../../components/workshop-card/workshop-card.component';
 import { returnListOfWorkshops } from '../../utils';
 
 export class WorkshopPage extends React.Component<any, any> {
