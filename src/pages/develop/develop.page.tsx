@@ -1,10 +1,8 @@
 import React from 'react';
 import './develop.page.css';
 
-import Grid from '@material-ui/core/Grid';
-import ListItem from '@material-ui/core/ListItem';
-import List from '@material-ui/core/List';
-import Box from '@material-ui/core/Box';
+import { Box, Grid, List, ListItem } from '@material-ui/core';
+
 import { FirebaseProvider } from '../../firebase';
 import { githubGraphQLClient, RepositoryModel } from '../../github';
 
@@ -17,7 +15,7 @@ interface DevelopPageState {
     repositories: Array<RepositoryModel>;
 }
 
-export default class DevelopPage extends React.Component<DevelopPageProps, DevelopPageState> {
+export class DevelopPage extends React.Component<DevelopPageProps, DevelopPageState> {
     constructor(props: DevelopPageProps) {
         super(props);
         this.state = {

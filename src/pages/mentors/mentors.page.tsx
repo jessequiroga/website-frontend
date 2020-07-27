@@ -1,10 +1,10 @@
 import React from 'react';
 import './mentors.page.css';
 
-// Material components
-import Grid from '@material-ui/core/Grid';
+import { Grid } from '@material-ui/core';
+
+import { MentorComponent } from '../../components';
 import { returnListOfMentors } from '../../utils';
-import MentorCardComponent from '../../components/mentor-card/mentor-card.component';
 
 export class MentorsPage extends React.Component<any, any> {
     render() {
@@ -28,7 +28,7 @@ export class MentorsPage extends React.Component<any, any> {
                                 {returnListOfMentors().map((mentor) => {
                                     return (
                                         <Grid item key={mentor.key} style={{ padding: '16px' }}>
-                                            <MentorCardComponent
+                                            <MentorComponent
                                                 name={mentor.name}
                                                 profilePic={mentor.profileImage}
                                                 instagram={mentor.instagram}

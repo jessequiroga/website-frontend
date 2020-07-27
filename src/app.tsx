@@ -1,15 +1,10 @@
 import React from 'react';
-import { LandingPage, MentorsPage, WorkshopPage } from './pages';
+
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
-import DevelopPage from './pages/develop/develop.page';
+import { DevelopPage, LandingPage, MentorsPage, RepresentativePage, WorkshopPage } from './pages';
 import { FirebaseProvider } from './firebase';
-import { RepresentativePage } from './pages/representative/representative.page';
 
-interface AppProps {}
-
-interface AppState {}
-
-export default class App extends React.Component<AppProps, AppState> {
+export default class App extends React.Component<any, any> {
     private readonly firebaseProvider = FirebaseProvider.getInstance();
 
     render() {

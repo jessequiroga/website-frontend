@@ -1,7 +1,7 @@
 import React from 'react';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import Card from '@material-ui/core/Card';
+import './workshop.component.css';
+
+import { Card, CardContent, Typography } from '@material-ui/core';
 
 interface WorkshopCardComponentProps {
     title: string;
@@ -9,7 +9,7 @@ interface WorkshopCardComponentProps {
     contents: string;
 }
 
-export default class WorkshopCardComponent extends React.Component<WorkshopCardComponentProps, any> {
+export class WorkshopComponent extends React.Component<WorkshopCardComponentProps, any> {
     render() {
         return (
             <Card>

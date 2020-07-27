@@ -1,8 +1,7 @@
 import React from 'react';
 import './landing.page.css';
 
-// Material components
-import Button from '@material-ui/core/Button';
+import { Button } from '@material-ui/core';
 
 export class LandingPage extends React.Component<any, any> {
     render() {

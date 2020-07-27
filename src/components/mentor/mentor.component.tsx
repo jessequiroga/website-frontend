@@ -1,11 +1,7 @@
 import React from 'react';
-import './mentor-card.component.css';
+import './mentor.component.css';
 
-// Material components
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+import { Box, Card, CardContent, Typography } from '@material-ui/core';
 
 interface MentorCardComponentProps {
     name: string;
@@ -14,7 +10,7 @@ interface MentorCardComponentProps {
     bio: string;
 }
 
-export default class MentorCardComponent extends React.Component<MentorCardComponentProps, any> {
+export class MentorComponent extends React.Component<MentorCardComponentProps, any> {
     render() {
         return (
             <Card>

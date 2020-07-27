@@ -1,19 +1,20 @@
 import React from 'react';
 import './representative.page.css';
 
-// Material components
-import Grid from '@material-ui/core/Grid';
+import {
+    Box,
+    Card,
+    CardContent,
+    Grid,
+    List,
+    ListItem,
+    ListItemIcon,
+    ListItemText,
+    Typography
+} from '@material-ui/core';
+import { Email, Phone } from '@material-ui/icons';
 
 import { returnListOfRepresentatives } from '../../utils/representatives.const';
-import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-
-import EmailIcon from '@material-ui/icons/Email';
-import PhoneIcon from '@material-ui/icons/Phone';
-import { Card, CardContent, ListItemText } from '@material-ui/core';
 
 export class RepresentativePage extends React.Component<any, any> {
     render() {
@@ -58,13 +59,13 @@ export class RepresentativePage extends React.Component<any, any> {
                                                             <List>
                                                                 <ListItem>
                                                                     <ListItemIcon>
-                                                                        <EmailIcon />
+                                                                        <Email />
                                                                     </ListItemIcon>
                                                                     <ListItemText primary={representative.email} />
                                                                 </ListItem>
                                                                 <ListItem>
                                                                     <ListItemIcon>
-                                                                        <PhoneIcon />
+                                                                        <Phone />
                                                                     </ListItemIcon>
                                                                     <ListItemText
                                                                         primary={representative.phoneNumber}

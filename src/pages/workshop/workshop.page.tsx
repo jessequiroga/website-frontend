@@ -1,10 +1,9 @@
 import React from 'react';
 import './workshop.page.css';
 
-// Material components
-import Grid from '@material-ui/core/Grid';
+import { Grid } from '@material-ui/core';
 
-import WorkshopCardComponent from '../../components/workshop-card/workshop-card.component';
+import { WorkshopComponent } from '../../components';
 import { returnListOfWorkshops } from '../../utils';
 
 export class WorkshopPage extends React.Component<any, any> {
@@ -29,7 +28,7 @@ export class WorkshopPage extends React.Component<any, any> {
                                 {returnListOfWorkshops().map((workshop) => {
                                     return (
                                         <Grid item key={workshop.key} style={{ padding: '16px' }}>
-                                            <WorkshopCardComponent
+                                            <WorkshopComponent
                                                 title={workshop.title}
                                                 mentor={workshop.mentor}
                                                 contents={workshop.description}
