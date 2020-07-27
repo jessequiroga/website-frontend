@@ -1,5 +1,5 @@
 import React from 'react';
-import './landing-page.css';
+import './landing.page.css';
 
 // Material components
 import Button from '@material-ui/core/Button';

@@ -1,5 +1,5 @@
 import React from 'react';
-import './mentors-page.css';
+import './mentors.page.css';
 
 // Material components
 import Grid from '@material-ui/core/Grid';

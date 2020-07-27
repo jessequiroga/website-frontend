@@ -1,9 +1,9 @@
 import React from 'react';
 import { LandingPage, MentorsPage, WorkshopPage } from './pages';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
-import DevelopPage from './pages/develop/develop-page';
+import DevelopPage from './pages/develop/develop.page';
 import { FirebaseProvider } from './firebase';
-import { RepresentativePage } from './pages/representative/representative-page';
+import { RepresentativePage } from './pages/representative/representative.page';
 
 interface AppProps {}
 

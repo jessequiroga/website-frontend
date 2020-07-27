@@ -1,5 +1,5 @@
 import React from 'react';
-import './workshop-page.css';
+import './workshop.page.css';
 
 // Material components
 import Grid from '@material-ui/core/Grid';

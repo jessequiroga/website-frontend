@@ -18,7 +18,7 @@ const MENTOR_PETER: MentorDetails = {
     profileImage: 'client_assets_peter.svg'
 };
 
-export const MENTOR_TIAN: MentorDetails = {
+const MENTOR_TIAN: MentorDetails = {
     key: 1,
     name: 'Tian Jagodic',
     instagram: '@tianjagodic',
@@ -30,7 +30,7 @@ export const MENTOR_TIAN: MentorDetails = {
     profileImage: 'client_assets_tian.svg'
 };
 
-export const MENTOR_DOMEN: MentorDetails = {
+const MENTOR_DOMEN: MentorDetails = {
     key: 2,
     name: 'Domen Dolenc',
     instagram: '@dolenc',

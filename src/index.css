@@ -7,3 +7,27 @@ body {
     margin: 0;
     min-height: 100%;
 }
+
+/* COMMON PAGE PROPERTIES */
+.page-container {
+    height: 100vh;
+    background-color: var(--primary-color);
+}
+
+.page-title {
+    color: var(--font-black);
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 56px;
+}
+
+/* CARD CONTAINER */
+.card-container {
+    position: relative;
+    margin-top: 80px;
+}
+
+.card-component-image {
+    width: 120px;
+    height: 120px;
+}

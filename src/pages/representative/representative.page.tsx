@@ -1,5 +1,5 @@
 import React from 'react';
-import './representative-page.css';
+import './representative.page.css';
 
 // Material components
 import Grid from '@material-ui/core/Grid';
