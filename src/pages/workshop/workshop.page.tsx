@@ -9,7 +9,7 @@ import { returnListOfWorkshops } from '../../utils';
 export class WorkshopPage extends React.Component<any, any> {
     render() {
         return (
-            <div className="page-container">
+            <div className="page-container bg">
                 <div className="card-container">
                     <Grid
                         container

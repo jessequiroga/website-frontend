@@ -9,7 +9,7 @@ import { RepresentativeComponent } from '../../components';
 export class RepresentativePage extends React.Component<any, any> {
     render() {
         return (
-            <div className="page-container">
+            <div className="page-container bg-representative">
                 <div className="card-container">
                     <Grid
                         container
