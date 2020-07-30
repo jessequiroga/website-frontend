@@ -31,7 +31,7 @@ export class DevelopPage extends React.Component<DevelopPageProps, DevelopPageSt
 
     render() {
         return (
-            <div className="page-container bg-develop">
+            <div className="page-container">
                 <div className="develop-page-title">RAZVIJAJ Z NAMI!</div>
                 <Grid container style={{ padding: '24px' }}>
                     <Grid item xs={3}>

@@ -12,9 +12,3 @@
     font-size: 40px;
     padding: 24px 0 56px 24px;
 }
-
-.bg-develop {
-    background-image: url('../../assets/background_develop.svg');
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
